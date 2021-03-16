@@ -1,0 +1,23 @@
+ALGORITHM Text_test
+VAR
+    text:CHAR;
+    CountVowels,CountWords,CountLength:INTEGER;
+BEGIN
+    CountLength:=1;
+    CountWords:=1;
+    CountVowels:=0;
+    Write("Give us a sentence that ends with '.'");
+    WHILE (text<>".") DO
+        Read(text);
+        CountLength:=CountLength+1;
+        IF (text=" ") THEN
+        CountWords:=CountWords+1;
+        END_IF
+        IF (text="a" OR text="A" OR text="e" OR text="E" OR text="i" OR text="I" OR text="o" OR text="O" OR text="u" OR text="U" OR text="y" OR text="Y") THEN
+        CountVowels:=CountVowels+1; 
+        END_IF
+    END_WHILE
+    Write("The text's length is: ",CountLength);
+    Write("The number of words in this text is: ",CountWords);
+    Write("The number of vowels in this text is: ",CountVowels);
+END
